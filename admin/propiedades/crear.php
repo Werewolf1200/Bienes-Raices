@@ -117,7 +117,7 @@
             if($resultado) {
 
             //Redireccionar al uduario
-               header('Location: /admin');
+               header('Location: /admin?resultado=1');
             }
         }
 
