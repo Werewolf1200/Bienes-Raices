@@ -14,3 +14,11 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.boton-rojo-block {
+    @include boton($rojo, block);
+}
+
+.boton-amarillo-block {
+    @include boton($amarillo, block);
+}
