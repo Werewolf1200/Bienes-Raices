@@ -13,6 +13,7 @@
     // Iniciamos las variables vacias para poder guardar los valores con Value
     $titulo = '';
     $precio = '';
+    
     $descripcion = '';
     $habitaciones = '';
     $wc = '';
