@@ -1,4 +1,14 @@
 <?php 
+    session_start();
+        // echo "<pre>";
+        // var_dump($_SESSION);
+        // echo "</pre>";
+    $auth = $_SESSION['login'];
+
+    if(!$auth) {
+        header('Location: /');
+    }
+
 
     //Importar la conexion
     require './../includes/config/database.php';
