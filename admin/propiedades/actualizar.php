@@ -1,4 +1,12 @@
 <?php 
+
+    require '../../includes/funciones.php';
+    $auth = estaAutenticado();
+
+    if(!$auth) {
+        header('Location: /');
+    }
+
     // Validar la URL por Id válido
     $id = $_GET['id'];
     $id = filter_var($id, FILTER_VALIDATE_INT);
@@ -95,10 +103,6 @@
             $errores[] = "La imagen es muy pesada";
         }
 
-      /*  echo "<pre>";
-         var_dump($errores);
-        echo "</pre>"; */
-
         // Revisar que el Array de errores esté vacio
 
         if(empty($errores)) {
@@ -111,7 +115,6 @@
              }
 
              $nombreImagen = '';
- 
 
             // SUBIR ARCHIVOS
 
@@ -127,11 +130,6 @@
             }  else {
                 $nombreImagen = $propiedad['imagen'];
             }
-
-
-           
-            
-
 
             // Actualizar en la Base de Datos
             $query = " UPDATE propiedades SET 
@@ -160,7 +158,6 @@
 
     }
 
-    require '../../includes/funciones.php';
     incluirTemplate('header');
 ?>
 
